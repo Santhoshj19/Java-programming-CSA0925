@@ -1,24 +1,25 @@
 import java.util.Scanner;
-class PerfectSquareRoot {
-    
-    static void findSquareRoot(int num) {
-        double squareRoot = Math.sqrt(num);
-        System.out.println("Square Root: " + (int) squareRoot + ", " + -(int) squareRoot);
-    }
-
-    public static void main(String[] args) {
+ class PerfectSquareRoot
+ {
+    public static void main(String[] args)
+{
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter the number: ");
-        int number = scanner.nextInt();
-
-        double squareRoot = Math.sqrt(number);
-        if (squareRoot == Math.floor(squareRoot)) {
-            findSquareRoot(number);
-        } else {
-            System.out.println("The number is not a perfect square.");
-        }
-
+        System.out.print("Enter a perfect square number: ");
+        int num = scanner.nextInt();
         scanner.close();
+        double sqrt = Math.sqrt(num);
+        if (num < 0)
+ {
+            System.out.println("Cannot find square root of a negative number.");
+        } 
+else if (Math.floor(sqrt) == sqrt) 
+{
+            System.out.println("Square root of " + num + " is: " + sqrt);
+            System.out.println("Negative square root of " + num + " is: " + (-sqrt));
+        } 
+else
+ {
+            System.out.println(num + " is not a perfect square number.");
+        }
     }
 }
